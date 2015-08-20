@@ -1,0 +1,3 @@
+open_orchestra_newsletter_model_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: OpenOrchestraNewsletterModelBundle:Default:index }

@@ -1,0 +1,9 @@
+{% extends 'OpenOrchestraDisplayBundle:Block:layout.html.twig' %}
+
+{% block content %}
+    <h3>
+        {{ 'open_orchestra_newsletter.title.registration'|trans }}
+    </h3>
+    {{ "now"|date("m/d/Y H:i:s") }}
+    {{ form(form) }}
+{% endblock %}

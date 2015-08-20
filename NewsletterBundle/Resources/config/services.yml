@@ -1,0 +1,12 @@
+parameters:
+    open_orchestra_newsletter.display.newsletter.class: OpenOrchestra\Newsletter\DisplayBlock\Strategies\NewsletterStrategy
+
+services:
+    open_orchestra_newsletter.display.newsletter:
+        class: %open_orchestra_newsletter.display.newsletter.class%
+        arguments:
+            - @form.factory
+            - @request_stack
+            - @router
+        tags:
+            - { name: open_orchestra_display.display_block.strategy }
