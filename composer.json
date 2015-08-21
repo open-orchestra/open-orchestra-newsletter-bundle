@@ -1,5 +1,5 @@
 {
-  "name": "open-orchestra/newsletter-bundle",
+  "name": "open-orchestra/open-orchestra-newsletter-bundle",
   "type": "package",
   "description": "A bundle which provides a newsletter subscription management for Open Orchestra",
   "license": "Apache-2.0",
