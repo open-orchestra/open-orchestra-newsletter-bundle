@@ -23,6 +23,7 @@ class NewsletterStrategyTest extends \PHPUnit_Framework_TestCase
     protected $formFactory;
     protected $requestStack;
     protected $urlGenerator;
+    protected $objectManager;
 
     /**
      * Set up the test
@@ -33,6 +34,7 @@ class NewsletterStrategyTest extends \PHPUnit_Framework_TestCase
         $this->requestStack = Phake::mock('Symfony\Component\HttpFoundation\RequestStack');
         $this->urlGenerator = Phake::mock('Symfony\Component\Routing\Generator\UrlGeneratorInterface');
         $this->factory = Phake::mock('OpenOrchestra\Newsletter\Factory\NewsletterSubscriberFactory');
+        $this->objectManager = Phake::mock('Doctrine\Common\Persistence\ObjectManager');
 
         $this->templating = Phake::mock('Symfony\Bundle\FrameworkBundle\Templating\EngineInterface');
         $manager = Phake::mock('OpenOrchestra\DisplayBundle\DisplayBlock\DisplayBlockManager');
@@ -40,7 +42,7 @@ class NewsletterStrategyTest extends \PHPUnit_Framework_TestCase
 
         $this->block = Phake::mock('OpenOrchestra\ModelInterface\Model\BlockInterface');
 
-        $this->strategy = new NewsletterStrategy($this->formFactory, $this->requestStack, $this->urlGenerator, $this->factory);
+        $this->strategy = new NewsletterStrategy($this->formFactory, $this->requestStack, $this->urlGenerator, $this->factory, $this->objectManager);
         $this->strategy->setManager($manager);
     }
 
