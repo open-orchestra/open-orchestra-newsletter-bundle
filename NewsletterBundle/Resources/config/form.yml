@@ -1,0 +1,10 @@
+parameters:
+    open_orchestra_newsletter.form.newsletter_subscriber.class: OpenOrchestra\NewsletterBundle\Form\Type\NewsletterSubscriberType
+
+services:
+    open_orchestra_newsletter.form.newsletter_subscriber:
+        class: %open_orchestra_newsletter.form.newsletter_subscriber.class%
+        arguments:
+            - %open_orchestra_newsletter.document.newsletter_subscriber.class%
+        tags:
+            - { name: form.type, alias: newsletter_subscriber }

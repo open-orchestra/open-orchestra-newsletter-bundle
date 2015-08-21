@@ -20,9 +20,19 @@ class Configuration implements ConfigurationInterface
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('open_orchestra_newsletter_model');
 
-        // Here you should define the parameters that are allowed to
-        // configure your bundle. See the documentation linked above for
-        // more information on that topic.
+        $rootNode->children()
+            ->arrayNode('document')
+                ->addDefaultsIfNotSet()
+                ->children()
+                ->arrayNode('newsletter_subscriber')
+                    ->addDefaultsIfNotSet()
+                    ->children()
+                        ->scalarNode('class')->defaultValue('OpenOrchestra\NewsletterModelBundle\Document\NewsletterSubscriber')->end()
+                        ->scalarNode('repository')->defaultValue('OpenOrchestra\NewsletterModelBundle\Repository\NewsletterSubscriberRepository')->end()
+                    ->end()
+                ->end()
+            ->end()
+        ->end();
 
         return $treeBuilder;
     }

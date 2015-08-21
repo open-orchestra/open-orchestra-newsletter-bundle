@@ -2,9 +2,10 @@
 
 namespace OpenOrchestra\Newsletter\DisplayBlock\Strategies;
 
+use Doctrine\Common\Persistence\ObjectManager;
 use OpenOrchestra\DisplayBundle\DisplayBlock\Strategies\AbstractStrategy;
 use OpenOrchestra\ModelInterface\Model\ReadBlockInterface;
-use OpenOrchestra\NewsletterBundle\Form\Type\NewsletterSubscriberType;
+use OpenOrchestra\Newsletter\Factory\NewsletterSubscriberFactory;
 use Symfony\Component\Form\FormFactory;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Response;
@@ -17,20 +18,32 @@ class NewsletterStrategy extends AbstractStrategy
 {
     const NEWSLETTER = 'newsletter';
 
+    protected $factory;
     protected $formFactory;
     protected $requestStack;
     protected $urlGenerator;
+    protected $objectManager;
 
     /**
-     * @param FormFactory           $formFactory
-     * @param RequestStack          $requestStack
-     * @param UrlGeneratorInterface $urlGenerator
+     * @param FormFactory                 $formFactory
+     * @param RequestStack                $requestStack
+     * @param UrlGeneratorInterface       $urlGenerator
+     * @param NewsletterSubscriberFactory $factory
+     * @param ObjectManager               $objectManager
      */
-    public function __construct(FormFactory $formFactory, RequestStack $requestStack, UrlGeneratorInterface $urlGenerator)
+    public function __construct(
+        FormFactory $formFactory,
+        RequestStack $requestStack,
+        UrlGeneratorInterface $urlGenerator,
+        NewsletterSubscriberFactory $factory,
+        ObjectManager $objectManager
+    )
     {
         $this->formFactory = $formFactory;
         $this->requestStack = $requestStack;
         $this->urlGenerator = $urlGenerator;
+        $this->factory = $factory;
+        $this->objectManager = $objectManager;
     }
 
     /**
@@ -56,8 +69,9 @@ class NewsletterStrategy extends AbstractStrategy
     {
         $request = $this->requestStack->getCurrentRequest();
         $routeName = $request->query->get('currentRouteName');
+        $newsletterSubscriber = $this->factory->create();
 
-        $form = $this->formFactory->create(new NewsletterSubscriberType(), null, array(
+        $form = $this->formFactory->create('newsletter_subscriber', $newsletterSubscriber, array(
             'action' => $this->urlGenerator->generate($routeName),
             'method' => 'POST',
         ));
@@ -67,7 +81,8 @@ class NewsletterStrategy extends AbstractStrategy
             $form->submit($sendData);
 
             if ($form->isValid()) {
-                var_dump($form->getData());
+                $this->objectManager->persist($newsletterSubscriber);
+                $this->objectManager->flush($newsletterSubscriber);
             }
         }
 

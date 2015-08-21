@@ -1,0 +1,9 @@
+parameters:
+    open_orchestra_newsletter.factory.newsletter_subscriber.class: OpenOrchestra\Newsletter\Factory\NewsletterSubscriberFactory
+
+services:
+    open_orchestra_newsletter.factory.newsletter_subscriber:
+        class: %open_orchestra_newsletter.factory.newsletter_subscriber.class%
+        arguments:
+            - %open_orchestra_newsletter.document.newsletter_subscriber.class%
+            - @open_orchestra_display.manager.site

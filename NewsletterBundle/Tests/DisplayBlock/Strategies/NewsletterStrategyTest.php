@@ -18,20 +18,29 @@ class NewsletterStrategyTest extends \PHPUnit_Framework_TestCase
     protected $strategy;
 
     protected $block;
+    protected $factory;
     protected $templating;
+    protected $formFactory;
+    protected $requestStack;
+    protected $urlGenerator;
 
     /**
      * Set up the test
      */
     public function setUp()
     {
+        $this->formFactory = Phake::mock('Symfony\Component\Form\FormFactory');
+        $this->requestStack = Phake::mock('Symfony\Component\HttpFoundation\RequestStack');
+        $this->urlGenerator = Phake::mock('Symfony\Component\Routing\Generator\UrlGeneratorInterface');
+        $this->factory = Phake::mock('OpenOrchestra\Newsletter\Factory\NewsletterSubscriberFactory');
+
         $this->templating = Phake::mock('Symfony\Bundle\FrameworkBundle\Templating\EngineInterface');
         $manager = Phake::mock('OpenOrchestra\DisplayBundle\DisplayBlock\DisplayBlockManager');
         Phake::when($manager)->getTemplating()->thenReturn($this->templating);
 
         $this->block = Phake::mock('OpenOrchestra\ModelInterface\Model\BlockInterface');
 
-        $this->strategy = new NewsletterStrategy();
+        $this->strategy = new NewsletterStrategy($this->formFactory, $this->requestStack, $this->urlGenerator, $this->factory);
         $this->strategy->setManager($manager);
     }
 
@@ -74,23 +83,6 @@ class NewsletterStrategyTest extends \PHPUnit_Framework_TestCase
             array(false, ContactStrategy::CONTACT),
             array(false, TinyMCEWysiwygStrategy::TINYMCEWYSIWYG),
             array(true, NewsletterStrategy::NEWSLETTER),
-        );
-    }
-
-    public function testShow()
-    {
-        $htmlClass = 'block-body';
-        Phake::when($this->block)->getClass()->thenReturn($htmlClass);
-
-        $this->strategy->show($this->block);
-
-        Phake::verify($this->templating)->renderResponse(
-            'OpenOrchestraNewsletterBundle:DisplayBlock/Newsletter:show.html.twig',
-            array(
-                'id' => null,
-                'class' => $htmlClass,
-            ),
-            null
         );
     }
 }

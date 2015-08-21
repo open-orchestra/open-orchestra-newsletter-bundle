@@ -8,5 +8,7 @@ services:
             - @form.factory
             - @request_stack
             - @router
+            - @open_orchestra_newsletter.factory.newsletter_subscriber
+            - @object_mananger
         tags:
             - { name: open_orchestra_display.display_block.strategy }

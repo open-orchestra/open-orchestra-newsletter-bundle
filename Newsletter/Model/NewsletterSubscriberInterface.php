@@ -42,4 +42,14 @@ interface NewsletterSubscriberInterface
      * @return string
      */
     public function getEmail();
+
+    /**
+     * @return string
+     */
+    public function getSiteId();
+
+    /**
+     * @param string $siteId
+     */
+    public function setSiteId($siteId);
 }

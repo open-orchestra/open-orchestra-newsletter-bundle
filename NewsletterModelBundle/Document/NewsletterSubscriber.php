@@ -44,6 +44,13 @@ class NewsletterSubscriber implements NewsletterSubscriberInterface
     protected $email;
 
     /**
+     * @var string $siteId
+     *
+     * @ODM\Field(type="string")
+     */
+    protected $siteId;
+
+    /**
      * Set lastName
      *
      * @param string $lastName
@@ -109,5 +116,21 @@ class NewsletterSubscriber implements NewsletterSubscriberInterface
     public function getEmail()
     {
         return $this->email;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSiteId()
+    {
+        return $this->siteId;
+    }
+
+    /**
+     * @param string $siteId
+     */
+    public function setSiteId($siteId)
+    {
+        $this->siteId = $siteId;
     }
 }
