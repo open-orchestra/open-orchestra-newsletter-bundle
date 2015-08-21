@@ -1,0 +1,13 @@
+parameters:
+    open_orchestra_newsletter_admin.transformer.newsletter_subscriber.class: OpenOrchestra\NewsletterAdminBundle\Transformer\NewsletterSubscriberTransformer
+    open_orchestra_newsletter_admin.transformer.newsletter_subscriber_collection.class: OpenOrchestra\NewsletterAdminBundle\Transformer\NewsletterSubscriberCollectionTransformer
+
+services:
+    open_orchestra_newsletter_admin.transformer.newsletter_subscriber:
+        class: %open_orchestra_newsletter_admin.transformer.newsletter_subscriber.class%
+        tags:
+            - { name: open_orchestra_api.transformer.strategy }
+    open_orchestra_newsletter_admin.transformer.newsletter_subscriber_collection:
+        class: %open_orchestra_newsletter_admin.transformer.newsletter_subscriber_collection.class%
+        tags:
+            - { name: open_orchestra_api.transformer.strategy }

@@ -1,0 +1,11 @@
+open_orchestra_newsletter:
+    left_menu:
+        administration:
+            newsletter_subscriber:
+                list: Inscris à la newsletter
+    form:
+        newsletter_subscriber:
+            edit:
+                success: L'inscris a été mis à jour
+            new:
+                success: L'inscris a été crée

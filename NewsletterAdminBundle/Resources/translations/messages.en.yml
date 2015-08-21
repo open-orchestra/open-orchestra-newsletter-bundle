@@ -1,0 +1,11 @@
+open_orchestra_newsletter:
+    left_menu:
+        administration:
+            newsletter_subscriber:
+                list: Newsletter subscriber
+    form:
+        newsletter_subscriber:
+            edit:
+                success: The subscriber has been updated
+            new:
+                success: The subscriber has been created

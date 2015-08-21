@@ -28,6 +28,7 @@
   },
   "autoload": {
     "psr-0": {
+      "OpenOrchestra\\NewsletterAdminBundle": "",
       "OpenOrchestra\\NewsletterModelBundle": "",
       "OpenOrchestra\\NewsletterBundle": "",
       "OpenOrchestra\\Newsletter": ""

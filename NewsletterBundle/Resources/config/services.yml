@@ -9,6 +9,6 @@ services:
             - @request_stack
             - @router
             - @open_orchestra_newsletter.factory.newsletter_subscriber
-            - @object_mananger
+            - @object_manager
         tags:
             - { name: open_orchestra_display.display_block.strategy }
