@@ -2,7 +2,7 @@ open_orchestra_newsletter:
     left_menu:
         administration:
             newsletter_subscriber:
-                list: Inscris à la newsletter
+                list: Abonnés à la newsletter
             element:
                 last_name: Nom
                 first_name: Prénom
@@ -11,6 +11,6 @@ open_orchestra_newsletter:
     form:
         newsletter_subscriber:
             edit:
-                success: L'inscris a été mis à jour
+                success: L'abonné a été mis à jour
             new:
-                success: L'inscris a été créé
+                success: L'abonné a été créé
