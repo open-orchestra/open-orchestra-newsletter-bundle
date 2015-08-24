@@ -43,9 +43,10 @@ To use the bundle in a back envirenment, you will have to add the admin bundle :
     new OpenOrchestra\NewsletterAdminBundle\OpenOrchestraNewsletterAdminBundle,
 ```
 
-You will also have to import the route for the bundle (in the `app/config/routing.yml` file) :
+You will also have to import the route for the bundle :
 
 ```yaml
+    #app/config/routing.yml
     open_orchestra_newsletter_api:
         resource: "@OpenOrchestraNewsletterAdminBundle/Controller/Api"
         type: annotation
