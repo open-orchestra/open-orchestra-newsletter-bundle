@@ -3,9 +3,14 @@ open_orchestra_newsletter:
         administration:
             newsletter_subscriber:
                 list: Inscris à la newsletter
+            element:
+                last_name: Nom
+                first_name: Prénom
+                email: Email
+                site_id: Site
     form:
         newsletter_subscriber:
             edit:
                 success: L'inscris a été mis à jour
             new:
-                success: L'inscris a été crée
+                success: L'inscris a été créé

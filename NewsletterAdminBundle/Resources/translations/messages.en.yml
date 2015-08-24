@@ -3,6 +3,11 @@ open_orchestra_newsletter:
         administration:
             newsletter_subscriber:
                 list: Newsletter subscriber
+            element:
+                last_name: Last name
+                first_name: First name
+                email: Email
+                site_id: Site
     form:
         newsletter_subscriber:
             edit:

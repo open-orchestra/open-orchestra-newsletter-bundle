@@ -40,4 +40,12 @@ class NewsletterSubscriberPanelStrategy extends AbstractNavigationPanelStrategy
     {
         return 'ROLE_USER';
     }
+
+    /**
+     * @return int
+     */
+    public function getWeight()
+    {
+        return 60;
+    }
 }

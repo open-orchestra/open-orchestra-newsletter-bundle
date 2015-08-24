@@ -64,8 +64,7 @@ class NewsletterSubscriberController extends AbstractAdminController
         $form->handleRequest($request);
         $message = $this->get('translator')->trans('open_orchestra_newsletter.form.newsletter_subscriber.edit.success');
 
-        if ($this->handleForm($form, $message, $newsletterSubscriber)) {
-        }
+        $this->handleForm($form, $message, $newsletterSubscriber);
 
         return $this->renderAdminForm($form);
     }

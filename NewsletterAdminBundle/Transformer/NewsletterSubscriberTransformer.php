@@ -2,6 +2,7 @@
 
 namespace OpenOrchestra\NewsletterAdminBundle\Transformer;
 
+use OpenOrchestra\ApiBundle\Exceptions\TransformerParameterTypeException;
 use OpenOrchestra\BaseApi\Facade\FacadeInterface;
 use OpenOrchestra\BaseApi\Transformer\AbstractTransformer;
 use OpenOrchestra\Newsletter\Model\NewsletterSubscriberInterface;
@@ -16,9 +17,14 @@ class NewsletterSubscriberTransformer extends AbstractTransformer
      * @param mixed|NewsletterSubscriberInterface $newsletterSubscriber
      *
      * @return FacadeInterface
+     * @throws TransformerParameterTypeException
      */
     public function transform($newsletterSubscriber)
     {
+        if (!$newsletterSubscriber instanceof NewsletterSubscriberInterface) {
+            throw new TransformerParameterTypeException();
+        }
+
         $facade = new NewsletterSubscriberFacade();
 
         $facade->lastName = $newsletterSubscriber->getLastName();
