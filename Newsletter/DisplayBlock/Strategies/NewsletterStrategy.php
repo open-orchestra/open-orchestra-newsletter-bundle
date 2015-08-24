@@ -10,6 +10,7 @@ use Symfony\Component\Form\FormFactory;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
+use Symfony\Component\Translation\TranslatorInterface;
 
 /**
  * Class NewsletterStrategy
@@ -77,10 +78,12 @@ class NewsletterStrategy extends AbstractStrategy
         ));
 
         $sendData = $request->query->get('newsletter_subscriber');
+        $confirmationMessage = null;
         if (is_array($sendData)) {
             $form->submit($sendData);
 
             if ($form->isValid()) {
+                $confirmationMessage = 'open_orchestra_newsletter.registration.success';
                 $this->objectManager->persist($newsletterSubscriber);
                 $this->objectManager->flush($newsletterSubscriber);
             }
@@ -90,6 +93,7 @@ class NewsletterStrategy extends AbstractStrategy
             'id' => $block->getId(),
             'class' => $block->getClass(),
             'form' => $form->createView(),
+            'confirmation_message' => $confirmationMessage,
         ));
     }
 

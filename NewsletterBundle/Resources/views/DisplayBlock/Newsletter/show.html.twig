@@ -4,6 +4,11 @@
     <h3>
         {{ 'open_orchestra_newsletter.title.registration'|trans }}
     </h3>
-    {{ "now"|date("m/d/Y H:i:s") }}
-    {{ form(form) }}
+    {% if confirmation_message is not null %}
+        <div class="confirmation">
+            {{ confirmation_message| trans }}
+        </div>
+    {% else %}
+        {{ form(form) }}
+    {% endif %}
 {% endblock %}

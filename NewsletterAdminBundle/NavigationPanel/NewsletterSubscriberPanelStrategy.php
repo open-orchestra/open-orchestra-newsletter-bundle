@@ -30,7 +30,7 @@ class NewsletterSubscriberPanelStrategy extends AbstractNavigationPanelStrategy
      */
     public function getParent()
     {
-        return self::ADMINISTRATION;
+        return self::EDITORIAL;
     }
 
     /**
