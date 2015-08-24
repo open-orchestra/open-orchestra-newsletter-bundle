@@ -37,7 +37,6 @@ To use the bundle in a front environment, you will need to activate the bundle a
 To use the bundle in a back envirenment, you will have to add the admin bundle :
 
 ```php
-
     // app/AppKernel.php
     new OpenOrchestra\NewsletterBundle\OpenOrchestraNewsletterBundle,
     new OpenOrchestra\NewsletterModelBundle\OpenOrchestraNewsletterModelBundle,
@@ -46,8 +45,7 @@ To use the bundle in a back envirenment, you will have to add the admin bundle :
 
 You will also have to import the route for the bundle (in the `app/config/routing.yml` file) :
 
-```
-
+```yaml
     open_orchestra_newsletter_api:
         resource: "@OpenOrchestraNewsletterAdminBundle/Controller/Api"
         type: annotation
