@@ -33,6 +33,11 @@ class OpenOrchestraNewsletterModelExtension extends Extension
                     $definition->addMethodCall('setAggregationQueryBuilder', array(
                         new Reference('doctrine_mongodb.odm.default_aggregation_query')
                     ));
+                    if (method_exists($content['repository'],'setFilterTypeManager')) {
+                        $definition->addMethodCall('setFilterTypeManager', array(
+                            new Reference('open_orchestra_pagination.filter_type.manager')
+                        ));
+                    }
                     $container->setDefinition('open_orchestra_newsletter.repository.' . $class, $definition);
                 }
             }

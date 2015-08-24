@@ -4,6 +4,7 @@ namespace OpenOrchestra\NewsletterModelBundle\Document;
 
 use Doctrine\ODM\MongoDB\Mapping\Annotations as ODM;
 use OpenOrchestra\Newsletter\Model\NewsletterSubscriberInterface;
+use OpenOrchestra\Mapping\Annotations as ORCHESTRA;
 
 /**
  * Description of NewsletterSubscriber
@@ -26,6 +27,7 @@ class NewsletterSubscriber implements NewsletterSubscriberInterface
      * @var string $lastName
      *
      * @ODM\Field(type="string")
+     * @ORCHESTRA\Search(key="last_name")
      */
     protected $lastName;
 
@@ -33,6 +35,7 @@ class NewsletterSubscriber implements NewsletterSubscriberInterface
      * @var string $firstName
      *
      * @ODM\Field(type="string")
+     * @ORCHESTRA\Search(key="first_name")
      */
     protected $firstName;
 
@@ -40,6 +43,7 @@ class NewsletterSubscriber implements NewsletterSubscriberInterface
      * @var string $email
      *
      * @ODM\Field(type="string")
+     * @ORCHESTRA\Search(key="email")
      */
     protected $email;
 
@@ -47,6 +51,7 @@ class NewsletterSubscriber implements NewsletterSubscriberInterface
      * @var string $siteId
      *
      * @ODM\Field(type="string")
+     * @ORCHESTRA\Search(key="site_id")
      */
     protected $siteId;
 

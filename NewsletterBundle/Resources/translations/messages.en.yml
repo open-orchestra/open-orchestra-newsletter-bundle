@@ -1,3 +1,9 @@
 open_orchestra_newsletter:
     title:
         registration: Register to the Newsletter
+    registration:
+        success: You are now registered to the newsletter
+    form:
+        last_name: Last name
+        first_name: First name
+        email: Email

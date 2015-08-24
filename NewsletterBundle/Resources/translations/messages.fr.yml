@@ -1,3 +1,9 @@
 open_orchestra_newsletter:
     title:
         registration: Inscription à la lettre d'information
+    registration:
+        success: Vous êtes abonné à la newsletter
+    form:
+        last_name: Nom
+        first_name: Prénom
+        email: Email

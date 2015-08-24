@@ -1,0 +1,8 @@
+parameters:
+    open_orchestra_newsletter.navigation_panel.newsletter_subscriber.class: OpenOrchestra\NewsletterAdminBundle\NavigationPanel\NewsletterSubscriberPanelStrategy
+
+services:
+    open_orchestra_newsletter.navigation_panel.newsletter_subscriber:
+        class: %open_orchestra_newsletter.navigation_panel.newsletter_subscriber.class%
+        tags:
+            - { name: open_orchestra_backoffice.navigation_panel.strategy }

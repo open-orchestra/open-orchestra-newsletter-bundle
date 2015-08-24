@@ -1,0 +1,16 @@
+open_orchestra_newsletter:
+    left_menu:
+        administration:
+            newsletter_subscriber:
+                list: Abonnés à la newsletter
+            element:
+                last_name: Nom
+                first_name: Prénom
+                email: Email
+                site_id: Site
+    form:
+        newsletter_subscriber:
+            edit:
+                success: L'abonné a été mis à jour
+            new:
+                success: L'abonné a été créé

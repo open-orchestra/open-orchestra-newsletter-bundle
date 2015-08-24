@@ -5,7 +5,6 @@ namespace OpenOrchestra\NewsletterBundle\Form\Type;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 /**
  * Class NewsletterSubscriberType
@@ -28,10 +27,21 @@ class NewsletterSubscriberType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('firstName');
-        $builder->add('lastName');
-        $builder->add('email');
-        $builder->add('submit', 'submit');
+        $builder->add('firstName', 'text', array(
+            'label' => 'open_orchestra_newsletter.form.first_name'
+        ));
+        $builder->add('lastName', 'text', array(
+            'label' => 'open_orchestra_newsletter.form.last_name'
+        ));
+        $builder->add('email', 'email', array(
+            'label' => 'open_orchestra_newsletter.form.email',
+        ));
+        $builder->add('submit', 'submit', array(
+            'label' => 'open_orchestra_base.form.submit',
+            'attr' => array(
+                'class' => 'submit_form'
+            )
+        ));
     }
 
     /**

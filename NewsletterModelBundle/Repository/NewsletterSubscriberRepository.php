@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenOrchestra\ModelBundle\Repository;
+namespace OpenOrchestra\NewsletterModelBundle\Repository;
 
 use OpenOrchestra\Newsletter\Repository\NewsletterSubscriberRepositoryInterface;
 use OpenOrchestra\Pagination\MongoTrait\PaginationTrait;

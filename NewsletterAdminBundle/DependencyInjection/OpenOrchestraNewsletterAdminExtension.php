@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenOrchestra\NewsletterBundle\DependencyInjection;
+namespace OpenOrchestra\NewsletterAdminBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
@@ -10,7 +10,7 @@ use Symfony\Component\DependencyInjection\Loader;
 /**
  * This is the class that loads and manages your bundle configuration
  */
-class OpenOrchestraNewsletterExtension extends Extension
+class OpenOrchestraNewsletterAdminExtension extends Extension
 {
     /**
      * @param array            $configs
@@ -19,8 +19,7 @@ class OpenOrchestraNewsletterExtension extends Extension
     public function load(array $configs, ContainerBuilder $container)
     {
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
-        $loader->load('services.yml');
-        $loader->load('form.yml');
-        $loader->load('factory.yml');
+        $loader->load('transformer.yml');
+        $loader->load('navigation_panel.yml');
     }
 }

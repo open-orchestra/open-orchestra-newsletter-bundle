@@ -25,3 +25,6 @@ install:
   - php -d memory_limit=-1 ./composer.phar install --no-progress --prefer-dist
 
 script: ./bin/phpunit
+
+after_script:
+  - CODECLIMATE_REPO_TOKEN=bc8c8bf1d3a7e232fca5df78a0bfc0633d9e216d15339299af916f779040b861 ./bin/test-reporter
