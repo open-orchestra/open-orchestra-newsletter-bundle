@@ -19,3 +19,7 @@ open_orchestra_newsletter:
                 success: The subscriber has been updated
             new:
                 success: The subscriber has been created
+    log:
+        create: The subscriber email has been created
+        update: The subscriber email has been updated
+        delete: The subscriber email has been deleted
