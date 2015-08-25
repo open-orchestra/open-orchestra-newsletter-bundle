@@ -1,0 +1,8 @@
+parameters:
+    open_orchestra_newsletter.icon.newsletter.class: OpenOrchestra\NewsletterAdminBundle\DisplayIcon\NewsletterStrategy
+
+services:
+    open_orchestra_newsletter.icon.newsletter:
+        class: %open_orchestra_newsletter.icon.newsletter.class%
+        tags:
+            - { name: open_orchestra_backoffice.display_icon.strategy }

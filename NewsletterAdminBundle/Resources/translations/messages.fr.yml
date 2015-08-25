@@ -1,3 +1,8 @@
+open_orchestra_backoffice:
+    block:
+        newsletter:
+            title: Newsletter
+            description: Block pour s'inscrire à la newsletter
 open_orchestra_newsletter:
     left_menu:
         administration:
