@@ -1,4 +1,4 @@
-arameters:
+parameters:
     open_orchestra_newsletter.generate_form.newsletter.class: OpenOrchestra\NewsletterAdminBundle\GenerateForm\NewsletterStrategy
 
 services:
