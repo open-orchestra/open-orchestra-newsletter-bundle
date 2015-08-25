@@ -5,6 +5,8 @@ namespace OpenOrchestra\NewsletterAdminBundle\Controller\Api;
 use OpenOrchestra\ApiBundle\Controller\ControllerTrait\HandleRequestDataTable;
 use OpenOrchestra\BaseApi\Facade\FacadeInterface;
 use OpenOrchestra\BaseApiBundle\Controller\Annotation as Api;
+use OpenOrchestra\Newsletter\Event\NewsletterSubscriberEvent;
+use OpenOrchestra\NewsletterBundle\NewsletterSuscriberEvents;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration as Config;
 use OpenOrchestra\BaseApiBundle\Controller\BaseController;
 use Symfony\Component\HttpFoundation\Request;
@@ -68,6 +70,7 @@ class NewsletterSubscriberController extends BaseController
         $newsletterSubscriber = $this->get('open_orchestra_newsletter.repository.newsletter_subscriber')->find($newsletterSubscriberId);
         $dm = $this->get('object_manager');
         $dm->remove($newsletterSubscriber);
+        $this->dispatchEvent(NewsletterSuscriberEvents::DELETE, new NewsletterSubscriberEvent($newsletterSubscriber));
         $dm->flush();
 
         return array();

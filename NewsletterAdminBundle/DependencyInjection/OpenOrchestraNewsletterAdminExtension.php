@@ -23,5 +23,6 @@ class OpenOrchestraNewsletterAdminExtension extends Extension
         $loader->load('navigation_panel.yml');
         $loader->load('icon.yml');
         $loader->load('generate_form.yml');
+        $loader->load('log.yml');
     }
 }

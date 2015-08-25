@@ -3,6 +3,8 @@
 namespace OpenOrchestra\NewsletterAdminBundle\Controller\Admin;
 
 use OpenOrchestra\BackofficeBundle\Controller\AbstractAdminController;
+use OpenOrchestra\Newsletter\Event\NewsletterSubscriberEvent;
+use OpenOrchestra\NewsletterBundle\NewsletterSuscriberEvents;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration as Config;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
@@ -36,6 +38,8 @@ class NewsletterSubscriberController extends AbstractAdminController
         $message = $this->get('translator')->trans('open_orchestra_newsletter.form.newsletter_subscriber.new.success');
 
         if ($this->handleForm($form, $message, $newsletterSubscriber)) {
+            $this->dispatchEvent(NewsletterSuscriberEvents::CREATE, new NewsletterSubscriberEvent($newsletterSubscriber));
+
             return $this->render('BraincraftedBootstrapBundle::flash.html.twig');
         }
 
@@ -64,7 +68,9 @@ class NewsletterSubscriberController extends AbstractAdminController
         $form->handleRequest($request);
         $message = $this->get('translator')->trans('open_orchestra_newsletter.form.newsletter_subscriber.edit.success');
 
-        $this->handleForm($form, $message, $newsletterSubscriber);
+        if ($this->handleForm($form, $message, $newsletterSubscriber)) {
+            $this->dispatchEvent(NewsletterSuscriberEvents::UPDATE, new NewsletterSubscriberEvent($newsletterSubscriber));
+        }
 
         return $this->renderAdminForm($form);
     }

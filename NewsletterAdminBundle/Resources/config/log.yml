@@ -1,0 +1,11 @@
+parameters:
+    open_orchestra_newsletter.log.newsletter_subscriber.class: OpenOrchestra\NewsletterAdminBundle\EventSubscriber\LogNewsletterSubscriberSubscriber
+
+services:
+    open_orchestra_newsletter.log.newsletter_subscriber:
+        class: %open_orchestra_newsletter.log.newsletter_subscriber.class%
+        arguments:
+            - @logger
+        tags:
+            - { name: kernel.event_subscriber }
+            - { name: monolog.logger, channel: openorchestra }
