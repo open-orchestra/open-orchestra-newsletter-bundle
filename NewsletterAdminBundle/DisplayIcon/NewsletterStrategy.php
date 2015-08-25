@@ -32,7 +32,6 @@ class NewsletterStrategy extends AbstractStrategy
         return $this->render('OpenOrchestraNewsletterAdminBundle:Block/Newsletter:showIcon.html.twig');
     }
 
-
     /**
      * @return string
      */
