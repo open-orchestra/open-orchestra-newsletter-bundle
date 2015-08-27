@@ -50,7 +50,7 @@ class NewsletterSubscriberController extends BaseController
     {
         $mapping = $this
             ->get('open_orchestra_base.annotation_search_reader')
-            ->extractMapping('OpenOrchestra\NewsletterModelBundle\Document\NewsletterSubscriber');
+            ->extractMapping($this->container->getParameter('open_orchestra_newsletter.document.newsletter_subscriber.class'));
         $repository = $this->get('open_orchestra_newsletter.repository.newsletter_subscriber');
         $collectionTransformer = $this->get('open_orchestra_api.transformer_manager')->get('newsletter_subscriber_collection');
 
