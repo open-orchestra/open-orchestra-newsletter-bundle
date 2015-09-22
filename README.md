@@ -7,7 +7,7 @@ A Open Orchestra newsletter bundle
 | Travis        | [![Build Status](https://travis-ci.org/open-orchestra/open-orchestra-newsletter-bundle.svg?branch=master)](https://travis-ci.org/open-orchestra/open-orchestra-newsletter-bundle) |
 | CodeClimate (quality) | [![Code Climate](https://codeclimate.com/github/open-orchestra/open-orchestra-newsletter-bundle/badges/gpa.svg)](https://codeclimate.com/github/open-orchestra/open-orchestra-newsletter-bundle) |
 | CodeClimate (coverage) | [![Test Coverage](https://codeclimate.com/github/open-orchestra/open-orchestra-newsletter-bundle/badges/coverage.svg)](https://codeclimate.com/github/open-orchestra/open-orchestra-newsletter-bundle/coverage) |
-| Sension Insight | [![SensioLabsInsight](https://insight.sensiolabs.com/projects/8b2b822d-3e2e-4fea-b1b5-dede96731809/big.png)](https://insight.sensiolabs.com/projects/8b2b822d-3e2e-4fea-b1b5-dede96731809) |
+| Sension Insight | [![SensioLabsInsight](https://insight.sensiolabs.com/projects/539b9cae-9f32-4f08-bf60-463b7223888d/big.png)](https://insight.sensiolabs.com/projects/539b9cae-9f32-4f08-bf60-463b7223888d) |
 | VersionEye | [![Dependency Status](https://www.versioneye.com/user/projects/55dae2728d9c4b001b00039d/badge.svg?style=flat)](https://www.versioneye.com/user/projects/55dae2728d9c4b001b00039d) |
 
 ## Description
