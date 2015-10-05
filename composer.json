@@ -27,12 +27,11 @@
     "open-orchestra/open-orchestra-model-bundle": "To use the mongo functionnality"
   },
   "autoload": {
-    "psr-0": {
-      "OpenOrchestra\\NewsletterAdminBundle": "",
-      "OpenOrchestra\\NewsletterModelBundle": "",
-      "OpenOrchestra\\NewsletterBundle": "",
-      "OpenOrchestra\\Newsletter": ""
+    "psr-4": {
+      "OpenOrchestra\\NewsletterAdminBundle\\": "NewsletterAdminBundle/",
+      "OpenOrchestra\\NewsletterModelBundle\\": "NewsletterModelBundle/",
+      "OpenOrchestra\\NewsletterBundle\\": "NewsletterBundle/",
+      "OpenOrchestra\\Newsletter\\": "Newsletter/"
     }
-  },
-  "target-dir": "OpenOrchestra"
+  }
 }
