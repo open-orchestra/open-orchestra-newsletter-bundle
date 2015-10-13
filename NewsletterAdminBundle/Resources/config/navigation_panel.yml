@@ -4,5 +4,10 @@ parameters:
 services:
     open_orchestra_newsletter.navigation_panel.newsletter_subscriber:
         class: %open_orchestra_newsletter.navigation_panel.newsletter_subscriber.class%
+        arguments:
+            - newsletter_subscriber
+            - ROLE_USER
+            - 60
+            - %open_orchestra_backoffice.navigation_panel.menu.editorial%
         tags:
             - { name: open_orchestra_backoffice.navigation_panel.strategy }
