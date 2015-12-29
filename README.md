@@ -9,6 +9,8 @@ A Open Orchestra newsletter bundle
 | CodeClimate (coverage) | [![Test Coverage](https://codeclimate.com/github/open-orchestra/open-orchestra-newsletter-bundle/badges/coverage.svg)](https://codeclimate.com/github/open-orchestra/open-orchestra-newsletter-bundle/coverage) |
 | Sension Insight | [![SensioLabsInsight](https://insight.sensiolabs.com/projects/539b9cae-9f32-4f08-bf60-463b7223888d/big.png)](https://insight.sensiolabs.com/projects/539b9cae-9f32-4f08-bf60-463b7223888d) |
 | VersionEye | [![Dependency Status](https://www.versioneye.com/user/projects/55dae2728d9c4b001b00039d/badge.svg?style=flat)](https://www.versioneye.com/user/projects/55dae2728d9c4b001b00039d) |
+| Latest Stable Version | [![Latest Stable Version](https://poser.pugx.org/open-orchestra/open-orchestra-newsletter-bundle/v/stable)](https://packagist.org/packages/open-orchestra/open-orchestra-newsletter-bundle) |
+| Total Downloads | [![Total Downloads](https://poser.pugx.org/open-orchestra/open-orchestra-newsletter-bundle/downloads)](https://packagist.org/packages/open-orchestra/open-orchestra-newsletter-bundle) |
 
 ## Description
 
