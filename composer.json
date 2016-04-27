@@ -9,15 +9,14 @@
       "homepage": "https://github.com/open-orchestra/open-orchestra-newsletter-bundle/graphs/contributors"
     }
   ],
-  "minimum-stability": "dev",
   "require": {
-    "open-orchestra/open-orchestra-display-bundle": "*"
+    "open-orchestra/open-orchestra-display-bundle": "~1.1.0"
   },
   "require-dev": {
     "phpunit/phpunit" : "4.8.2",
     "psr/log": "1.0.0",
     "codeclimate/php-test-reporter": "dev-master",
-    "open-orchestra/open-orchestra-base-bundle": "dev-master",
+    "open-orchestra/open-orchestra-base-bundle": "~1.1.0",
     "phake/phake": "2.1.0"
   },
   "config" : {
