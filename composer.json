@@ -18,7 +18,10 @@
     "psr/log": "1.0.0",
     "codeclimate/php-test-reporter": "dev-master",
     "open-orchestra/open-orchestra-base-bundle": "self.version",
-    "phake/phake": "2.1.0"
+    "phake/phake": "2.1.0",
+
+    "open-orchestra/open-orchestra-model-interface": "self.version",
+    "open-orchestra/open-orchestra-bbcode-bundle": "self.version"
   },
   "config" : {
     "bin-dir" : "bin"
