@@ -10,7 +10,8 @@
     }
   ],
   "require": {
-    "open-orchestra/open-orchestra-display-bundle": "self.version"
+    "open-orchestra/open-orchestra-display-bundle": "self.version",
+    "innocead/captcha-bundle": "@dev"
   },
   "require-dev": {
     "phpunit/phpunit" : "4.8.2",
